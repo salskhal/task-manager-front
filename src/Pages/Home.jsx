@@ -25,6 +25,7 @@ export default function Home({ showUpdateModal, setShowUpdateModal }) {
         completed.push(task);
       }
     });
+    
   }
 
   useEffect(() => {
