@@ -36,7 +36,13 @@ export default authSlice.reducer;
 export const login = (credentials) => async (dispatch) => {
   console.log(credentials);
   try {
-    const response = await axios.post("/api/users/auth", credentials);
+    const response = await axios.post("/api/users/auth", credentials, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+
     if (response) {
       localStorage.setItem("auth", JSON.stringify(response.data));
       dispatch(setUserInfo(response.data));
@@ -54,15 +60,21 @@ export const logout = () => async (dispatch) => {
   dispatch(removeUserInfo());
 
   toast.success("Logout success");
-}
+};
 
 export const register = (credentials) => async (dispatch) => {
   try {
-    const response = await axios.post("/api/users", credentials);
+    const response = await axios.post("/api/users", credentials, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+
     if (response) {
       localStorage.setItem("auth", JSON.stringify(response.data));
       dispatch(setUserInfo(response.data));
-      
+
       toast.success("Register success");
     } else {
       toast.error("Register failed");
