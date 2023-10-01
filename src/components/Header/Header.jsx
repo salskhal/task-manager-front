@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { removeUserInfo } from "../../redux/authSlice";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import Logo from "../../assets/logo.png";
-import user from "../../assets/user.png";
 
 const Header = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
@@ -48,7 +46,7 @@ const Header = ({ showModal, setShowModal }) => {
                   <div
                     className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-800"
                   >
-                    {/* random image from unsplash */}
+                    
                     <p
                       className="text-white font-bold text-xl"
                       
