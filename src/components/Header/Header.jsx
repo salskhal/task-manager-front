@@ -27,7 +27,7 @@ const Header = ({ showModal, setShowModal }) => {
       <nav className="flex  gap-5 justify-between md:items-center flex-col md:flex-row p-5 md:px-10 py-5 w-full">
         <div>
           <Link to="/">
-            <img src={Logo} alt="" />
+            <h1 className="font-bold text-2xl text-white">Task Manager</h1>
           </Link>
         </div>
         <div className="flex items-center gap-4">
@@ -45,8 +45,16 @@ const Header = ({ showModal, setShowModal }) => {
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center px-2 py-1 gap-5 mr-2">
-                  <div>
-                    <img src={user} alt="" />
+                  <div
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-800"
+                  >
+                    {/* random image from unsplash */}
+                    <p
+                      className="text-white font-bold text-xl"
+                      
+                    >
+                      {currentUser.name[0] ? currentUser.name[0] : "U"}
+                    </p>
                   </div>
                   <div className="flex flex-col justify-center text-gray-600 font-semibold mt-1">
                     <span className="text-white font-bold text-xl">
